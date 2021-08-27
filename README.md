@@ -6,8 +6,10 @@ Demo for loading `java.util.ResourceBundle` with different Java versions/configu
 * Java 9+ (classpath)
 * Java 9+ (module path)
 
-Different locale variants of the `dev.morling.greeter.GreetingMessages` resource bundle are contributed by the _base_, _german_, and _french_ modules.
-They are loaded by the _app_ module.
+Resource bundles of a modular application are obtained from a central service in a uniform way,
+using the `dev.morling.links.base.LinksMessages` bundle name.
+The bundles are contributed by the _greenkeeping_ and _tournament_ modules.
+They are loaded by the _base_ module.
 Loading happens via an explicitly passed `Control` (on Java 1.8),
 via a `ResourceBundleControlProvider` (on Java 9+ with classpath),
 or via `ResourceBundleProvider`s (on Java 9+ with module path),
