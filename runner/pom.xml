@@ -1,3 +1,20 @@
+<!--
+
+     Copyright 2021 The original authors
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -12,7 +29,7 @@
   <artifactId>resourceloading-test-runner</artifactId>
   <packaging>jar</packaging>
 
-  <name>Runner</name>
+  <name>Links :: Runner</name>
 
   <dependencies>
     <dependency>
@@ -22,12 +39,12 @@
     </dependency>
     <dependency>
       <groupId>dev.morling.resourceloadingtest</groupId>
-      <artifactId>resourceloading-test-german</artifactId>
+      <artifactId>resourceloading-test-greenkeeping</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>dev.morling.resourceloadingtest</groupId>
-      <artifactId>resourceloading-test-french</artifactId>
+      <artifactId>resourceloading-test-tournament</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
@@ -48,9 +65,9 @@
             <argument>-Xdebug</argument>
             <argument>-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000</argument>
             <argument>--add-modules</argument>
-            <argument>dev.morling.greeter.german,dev.morling.greeter.french</argument>
+            <argument>dev.morling.links.greenkeeping,dev.morling.links.tournament</argument>
             <argument>--module</argument>
-            <argument>dev.morling.greeter.app/dev.morling.greeter.app.Main</argument>
+            <argument>dev.morling.links.app/dev.morling.links.app.Main</argument>
           </arguments>
         </configuration>
         </plugin>
@@ -75,7 +92,7 @@
                 <classpath/>
                 <argument>-Xdebug</argument>
                 <argument>-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000</argument>
-                <argument>dev.morling.greeter.app.Main</argument>
+                <argument>dev.morling.links.app.Main</argument>
               </arguments>
             </configuration>
             </plugin>

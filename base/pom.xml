@@ -1,3 +1,20 @@
+<!--
+
+     Copyright 2021 The original authors
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -11,8 +28,8 @@
 
   <artifactId>resourceloading-test-base</artifactId>
   <packaging>jar</packaging>
-  <name>Base</name>
-  
+  <name>Links :: Base</name>
+
   <build>
     <plugins>
       <plugin>
@@ -28,15 +45,47 @@
             <configuration>
               <module>
                 <moduleInfoSource>
-                  module dev.morling.greeter.base {
-                    exports dev.morling.greeter.spi;
-                    provides dev.morling.greeter.spi.GreetingMessagesProvider with dev.morling.greeter.base.internal.EnglishGreetingMessagesProvider;
+                  module dev.morling.links.base {
+                    exports dev.morling.links.base;
+                    exports dev.morling.links.base.spi;
+                    uses dev.morling.links.base.spi.LinksMessagesProvider;
                   }
                 </moduleInfoSource>
               </module>
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>compile-java-9</id>
+                <phase>compile</phase>
+                <goals>
+                    <goal>compile</goal>
+                </goals>
+                <configuration>
+                  <release>9</release>
+                  <compileSourceRoots>
+                    <compileSourceRoot>${project.basedir}/src/main/java-9</compileSourceRoot>
+                  </compileSourceRoots>
+                <multiReleaseOutput>true</multiReleaseOutput>
+              </configuration>
+            </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Multi-Release>true</Multi-Release>
+            </manifestEntries>
+          </archive>
+        </configuration>
       </plugin>
     </plugins>
   </build>

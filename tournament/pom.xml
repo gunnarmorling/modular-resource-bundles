@@ -26,11 +26,11 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>resourceloading-test-app</artifactId>
+  <artifactId>resourceloading-test-tournament</artifactId>
   <packaging>jar</packaging>
 
-  <name>Links :: Application</name>
-
+  <name>Links :: Tournament</name>
+  
   <dependencies>
     <dependency>
       <groupId>dev.morling.resourceloadingtest</groupId>
@@ -54,9 +54,9 @@
             <configuration>
               <module>
                 <moduleInfoSource>
-                  module dev.morling.links.app {
+                  module dev.morling.links.tournament {
                     requires dev.morling.links.base;
-                    exports dev.morling.links.app;
+                    provides dev.morling.links.base.spi.LinksMessagesProvider with dev.morling.links.tournament.internal.TournamentMessagesProvider;
                   }
                 </moduleInfoSource>
               </module>
