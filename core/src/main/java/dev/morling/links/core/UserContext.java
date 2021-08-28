@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package dev.morling.links.base;
+package dev.morling.links.core;
 
 import java.util.Locale;
 

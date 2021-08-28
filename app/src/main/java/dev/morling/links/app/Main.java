@@ -17,8 +17,8 @@ package dev.morling.links.app;
 
 import java.util.Locale;
 
-import dev.morling.links.base.ErrorHandler;
-import dev.morling.links.base.UserContext;
+import dev.morling.links.core.ErrorHandler;
+import dev.morling.links.core.UserContext;
 
 public class Main {
 

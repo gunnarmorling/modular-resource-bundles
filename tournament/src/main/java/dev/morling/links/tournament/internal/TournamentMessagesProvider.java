@@ -19,7 +19,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.spi.AbstractResourceBundleProvider;
 
-import dev.morling.links.base.spi.LinksMessagesProvider;
+import dev.morling.links.core.spi.LinksMessagesProvider;
 
 public class TournamentMessagesProvider extends AbstractResourceBundleProvider implements LinksMessagesProvider {
 
@@ -27,7 +27,7 @@ public class TournamentMessagesProvider extends AbstractResourceBundleProvider i
     public ResourceBundle getBundle(String baseName, Locale locale) {
         if (locale.getVariant().equals("tournament")) {
             locale = new Locale(locale.getLanguage(), locale.getCountry());
-            return super.getBundle(baseName.replace("base.LinksMessages", "tournament.LinksMessages"), locale);
+            return super.getBundle(baseName.replace("core.LinksMessages", "tournament.internal.LinksMessages"), locale);
         }
 
         return null;

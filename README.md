@@ -7,9 +7,9 @@ Demo for loading `java.util.ResourceBundle` with different Java versions/configu
 * Java 9+ (module path)
 
 Resource bundles of a modular application are obtained from a central service in a uniform way,
-using the `dev.morling.links.base.LinksMessages` bundle name.
+using the `dev.morling.links.core.LinksMessages` bundle name.
 The bundles are contributed by the _greenkeeping_ and _tournament_ modules.
-They are loaded by the _base_ module.
+They are loaded by the _core_ module.
 Loading happens via an explicitly passed `Control` (on Java 1.8),
 via a `ResourceBundleControlProvider` (on Java 9+ with classpath),
 or via `ResourceBundleProvider`s (on Java 9+ with module path),

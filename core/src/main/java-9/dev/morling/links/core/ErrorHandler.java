@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package dev.morling.links.base;
+package dev.morling.links.core;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -23,7 +23,7 @@ public class ErrorHandler {
     public String getErrorMessage(String key, UserContext context) {
         String component = key.split("\\.")[0];
         Locale locale = new Locale(context.getLocale().getLanguage(), context.getLocale().getCountry(), component);
-        ResourceBundle bundle = ResourceBundle.getBundle("dev.morling.links.base.LinksMessages", locale);
+        ResourceBundle bundle = ResourceBundle.getBundle("dev.morling.links.core.LinksMessages", locale);
 
         return "[User: " + context.getName() + "] " + bundle.getString(key);
     }

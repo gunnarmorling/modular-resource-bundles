@@ -26,9 +26,9 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>resourceloading-test-base</artifactId>
+  <artifactId>resourceloading-test-core</artifactId>
   <packaging>jar</packaging>
-  <name>Links :: Base</name>
+  <name>Links :: Core</name>
 
   <build>
     <plugins>
@@ -45,10 +45,10 @@
             <configuration>
               <module>
                 <moduleInfoSource>
-                  module dev.morling.links.base {
-                    exports dev.morling.links.base;
-                    exports dev.morling.links.base.spi;
-                    uses dev.morling.links.base.spi.LinksMessagesProvider;
+                  module dev.morling.links.core {
+                    exports dev.morling.links.core;
+                    exports dev.morling.links.core.spi;
+                    uses dev.morling.links.core.spi.LinksMessagesProvider;
                   }
                 </moduleInfoSource>
               </module>

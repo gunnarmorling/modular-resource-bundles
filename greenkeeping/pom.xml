@@ -34,7 +34,7 @@
   <dependencies>
     <dependency>
       <groupId>dev.morling.resourceloadingtest</groupId>
-      <artifactId>resourceloading-test-base</artifactId>
+      <artifactId>resourceloading-test-core</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
@@ -55,8 +55,8 @@
               <module>
                 <moduleInfoSource>
                   module dev.morling.links.greenkeeping {
-                    requires dev.morling.links.base;
-                    provides dev.morling.links.base.spi.LinksMessagesProvider with dev.morling.links.greenkeeping.internal.GreenKeepingMessagesProvider;
+                    requires dev.morling.links.core;
+                    provides dev.morling.links.core.spi.LinksMessagesProvider with dev.morling.links.greenkeeping.internal.GreenKeepingMessagesProvider;
                   }
                 </moduleInfoSource>
               </module>

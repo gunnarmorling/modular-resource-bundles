@@ -13,20 +13,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package dev.morling.links.base;
+package dev.morling.links.core.internal;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.ResourceBundle.Control;
+import java.util.spi.ResourceBundleControlProvider;
 
-import dev.morling.links.base.internal.LinksMessagesControl;
+public class LinksMessagesControlProvider implements ResourceBundleControlProvider {
 
-public class ErrorHandler {
-
-    public String getErrorMessage(String key, UserContext context) {
-        String component = key.split("\\.")[0];
-        Locale locale = new Locale(context.getLocale().getLanguage(), context.getLocale().getCountry(), component);
-        ResourceBundle bundle = ResourceBundle.getBundle("dev.morling.links.base.LinksMessages", locale, new LinksMessagesControl());
-
-        return "[User: " + context.getName() + "] " + bundle.getString(key);
+    @Override
+    public Control getControl(String baseName) {
+        return new LinksMessagesControl();
     }
 }

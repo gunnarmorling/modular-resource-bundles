@@ -161,7 +161,7 @@
   </dependencies>
 
   <modules>
-    <module>base</module>
+    <module>core</module>
     <module>greenkeeping</module>
     <module>tournament</module>
     <module>app</module>

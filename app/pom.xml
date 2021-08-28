@@ -34,7 +34,7 @@
   <dependencies>
     <dependency>
       <groupId>dev.morling.resourceloadingtest</groupId>
-      <artifactId>resourceloading-test-base</artifactId>
+      <artifactId>resourceloading-test-core</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
@@ -55,7 +55,7 @@
               <module>
                 <moduleInfoSource>
                   module dev.morling.links.app {
-                    requires dev.morling.links.base;
+                    requires dev.morling.links.core;
                     exports dev.morling.links.app;
                   }
                 </moduleInfoSource>

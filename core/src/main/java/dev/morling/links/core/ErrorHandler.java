@@ -13,15 +13,20 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package dev.morling.links.base.internal;
+package dev.morling.links.core;
 
 import java.util.Locale;
-import java.util.ResourceBundle.Control;
+import java.util.ResourceBundle;
 
-public class LinksMessagesControl extends Control {
+import dev.morling.links.core.internal.LinksMessagesControl;
 
-    @Override
-    public String toBundleName(String baseName, Locale locale) {
-        return super.toBundleName(baseName.replace("base.LinksMessages", locale.getVariant() + ".LinksMessages"), locale);
+public class ErrorHandler {
+
+    public String getErrorMessage(String key, UserContext context) {
+        String component = key.split("\\.")[0];
+        Locale locale = new Locale(context.getLocale().getLanguage(), context.getLocale().getCountry(), component);
+        ResourceBundle bundle = ResourceBundle.getBundle("dev.morling.links.core.LinksMessages", locale, new LinksMessagesControl());
+
+        return "[User: " + context.getName() + "] " + bundle.getString(key);
     }
 }
