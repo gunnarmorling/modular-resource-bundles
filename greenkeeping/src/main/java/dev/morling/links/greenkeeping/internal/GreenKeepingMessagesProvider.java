@@ -26,6 +26,7 @@ public class GreenKeepingMessagesProvider extends AbstractResourceBundleProvider
     @Override
     public ResourceBundle getBundle(String baseName, Locale locale) {
         if (locale.getVariant().equals("greenkeeping")) {
+            locale = new Locale(locale.getLanguage(), locale.getCountry());
             return super.getBundle(baseName.replace("base.LinksMessages", "greenkeeping.LinksMessages"), locale);
         }
 

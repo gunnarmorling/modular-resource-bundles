@@ -26,6 +26,7 @@ public class TournamentMessagesProvider extends AbstractResourceBundleProvider i
     @Override
     public ResourceBundle getBundle(String baseName, Locale locale) {
         if (locale.getVariant().equals("tournament")) {
+            locale = new Locale(locale.getLanguage(), locale.getCountry());
             return super.getBundle(baseName.replace("base.LinksMessages", "tournament.LinksMessages"), locale);
         }
 

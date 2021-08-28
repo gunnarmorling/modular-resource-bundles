@@ -28,6 +28,9 @@ public class Main {
         String message = errorHandler.getErrorMessage("greenkeeping.greenclosed", new UserContext("Bob", Locale.US));
         assert message.equals("[User: Bob] Green closed due to mowing");
 
+        message = errorHandler.getErrorMessage("greenkeeping.greenclosed", new UserContext("Herbert", Locale.GERMANY));
+        assert message.equals("[User: Herbert] Grün wegen Pflegearbeiten gesperrt");
+
         message = errorHandler.getErrorMessage("tournament.fullybooked", new UserContext("Bob", Locale.US));
         assert message.equals("[User: Bob] This tournament is fully booked");
     }
