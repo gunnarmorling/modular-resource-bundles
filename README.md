@@ -17,7 +17,7 @@ respectively.
 
 ## Build
 
-Run
+Use Java 9+ for building the project. Run
 
 ```
 mvn clean install
